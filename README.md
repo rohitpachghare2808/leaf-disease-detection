@@ -172,7 +172,9 @@ python app.py
 ## 👨‍💻 Author
 
 **Rohit Kailas Pachghare**
-[Email](rohitpachghare2808@gmail.com) | 
-[LinkedIn](https://www.linkedin.com/in/Rohit-Pachghare/) | [GitHub](https://github.com/rohitpachghare2808)
+B.E. Artificial Intelligence & Data Science
 
+📧 [Email](mailto:rohitpachghare2808@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/rohit-pachghare-85118832b/)  
+💻 [GitHub](https://github.com/rohitpachghare2808)
 
