@@ -164,7 +164,7 @@ python app.py
 ![Upload](screenshots/scan_upload.PNG)
 
 ### 🌿 Disease Prediction Result
-![Result](screenshots/result.png)
+![Result](screenshots/result.PNG)
 
 ### 📜 Precautions, New Scan & History
 ![History](screenshots/precaution_new_scan_history.PNG)
