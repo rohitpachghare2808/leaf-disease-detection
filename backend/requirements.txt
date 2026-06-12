@@ -1,0 +1,6 @@
+Flask>=2.0
+flask-cors>=3.0
+Pillow>=9.0
+torch>=1.9
+torchvision>=0.10
+Werkzeug>=2.0
