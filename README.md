@@ -172,7 +172,7 @@ python app.py
 ## 👨‍💻 Author
 
 **Rohit Kailas Pachghare**
-
-[LinkedIn](https://www.linkedin.com/in/rohit-pachghare-5b01b7288/) | [GitHub](https://github.com/rohitpachghare2808)
+[Email](rohitpachghare2808@gmail.com)
+[LinkedIn](https://www.linkedin.com/in/Rohit-Pachghare/) | [GitHub](https://github.com/rohitpachghare2808)
 
 
