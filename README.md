@@ -155,19 +155,19 @@ python app.py
 ## 📸 Screenshots
 
 ### 🔐 Login Page
-![Login](screenshots/login.png)
+![Login](screenshots/login.PNG)
 
 ### 🏠 Home Page
-![Home](screenshots/home.png)
+![Home](screenshots/home.PNG)
 
 ### 📤 Scan & Upload
-![Upload](screenshots/scan_upload.png)
+![Upload](screenshots/scan_upload.PNG)
 
 ### 🌿 Disease Prediction Result
 ![Result](screenshots/result.png)
 
 ### 📜 Precautions, New Scan & History
-![History](screenshots/precaution_new_scan_history.png)
+![History](screenshots/precaution_new_scan_history.PNG)
 
 ## 👨‍💻 Author
 
