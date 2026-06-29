@@ -1,16 +1,17 @@
-# leaf-disease-detection
+# Leaf Disease Detection
 An AI-powered web application that uses CNN-based deep learning to detect plant leaf diseases from uploaded images and provide remedies, prevention measures, and treatment recommendations.
 
 ## Introduction
+
 ### Problem
-Agriculture plays a vital role in global food production and supports over 2.6 billion people worldwide. However, plant diseases significantly impact crop health and productivity, causing annual losses estimated at over $220 billion and reducing yields by up to 30%. Traditional disease detection methods rely on manual inspection and expert knowledge, which can be time-consuming, costly, and inaccessible to many farmers, especially in rural areas.
+Agriculture plays a vital role in global food production and supports over 2.6 billion people worldwide. However, plant diseases significantly impact crop health and productivity, causing annual losses estimated at over $220 billion and reducing crop yields by up to 30%. Traditional disease detection methods rely on manual inspection and expert knowledge, which can be time-consuming, costly, and inaccessible to many farmers, especially in rural areas.
 
 ### Solution
 This project presents an AI-powered Leaf Disease Detection System that uses Convolutional Neural Networks (CNN) and deep learning techniques to identify plant diseases from leaf images. The system provides accurate disease predictions along with remedies, prevention measures, and treatment recommendations, enabling early intervention and improved crop management.
 
 ## Features
 - User Login and Registration
-- Upload/Scan Leaf Images for Analysis
+- Upload or Scan Leaf Images for Analysis
 - AI-Based Disease Detection using CNN
 - Detection of 10 Leaf Disease Classes
 - Disease Prediction Results with Confidence Score
@@ -22,12 +23,12 @@ This project presents an AI-powered Leaf Disease Detection System that uses Conv
 ## Technologies Used
 
 ### 1. Frontend (User Interface)
-Provides login page, image upload, and scan interface. Handles user interaction and displays prediction results.
+Provides a login page, image upload interface, and scan results page. Handles user interaction and displays prediction results.
 - HTML
 - CSS
 - JavaScript
 
-### 2. Backend (Server & API)
+### 2. Backend (Server and API)
 Built using Flask (Python) to manage requests and responses.
 
 **APIs Implemented:**
@@ -36,7 +37,7 @@ Built using Flask (Python) to manage requests and responses.
 - History – Fetch Scan Records
 
 ### 3. Machine Learning Model
-CNN (Convolutional Neural Network) model built using PyTorch for disease classification.
+A CNN (Convolutional Neural Network) model built using PyTorch for disease classification.
 - Input: Leaf Image (224 × 224)
 - Output: Disease Type and Recommended Treatment
 
@@ -101,7 +102,7 @@ SQLite Database (`leafcare.db`)
 ## Workflow
 1. User uploads a leaf image.
 2. Image is resized and preprocessed.
-3. CNN extracts important features.
+3. CNN extracts important visual features.
 4. Model predicts the disease class.
 5. System displays:
    - Disease Name
@@ -111,18 +112,18 @@ SQLite Database (`leafcare.db`)
    - Prevention Measures
 
 ## Model Performance
-- CNN-Based Deep Learning Model built with PyTorch
+- CNN-based deep learning model built with PyTorch
 - Dataset: PlantVillage (8,000+ curated images across 10 disease classes)
-- Train/Val Split: 80/20
-- Data Augmentation: Random flips, rotation, color jitter, normalization
+- Train/Validation Split: 80/20
+- Data Augmentation: Random flips, rotation, color jitter, and normalization
 - Validation Accuracy: **96.57%** (20 Epochs)
-- Fast and Efficient Real-Time Disease Prediction
+- Fast and efficient real-time disease prediction
 
-## Challenges & Learnings
+## Challenges and Learnings
 - Curated and mapped 10 disease classes from the PlantVillage dataset
-- Handled class imbalance through data augmentation
+- Addressed class imbalance through data augmentation techniques
 - Implemented prototype-based unknown detection to reject non-leaf images
-- Integrated trained PyTorch model into a full-stack Flask web application
+- Successfully integrated a trained PyTorch model into a full-stack Flask web application
 
 ## Installation
 
@@ -164,13 +165,13 @@ python app.py
 ### 🏠 Home Page
 ![Home](screenshots/home.PNG)
 
-### 📤 Scan & Upload
+### 📤 Scan and Upload
 ![Upload](screenshots/scan_upload.PNG)
 
 ### 🌿 Disease Prediction Result
 ![Result](screenshots/result.PNG)
 
-### 📜 Precautions, New Scan & History
+### 📜 Precautions, New Scan and History
 ![History](screenshots/precaution_new_scan_history.PNG)
 
 ## 👨‍💻 Author
