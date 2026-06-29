@@ -1,15 +1,19 @@
 # leaf-disease-detection
 An AI-powered web application that uses CNN-based deep learning to detect plant leaf diseases from uploaded images and provide remedies, prevention measures, and treatment recommendations.
-## Introduction:-
-### Problem:- Agriculture plays a vital role in global food production and supports over 2.6 billion people worldwide. However, plant diseases significantly impact crop health and productivity, causing annual losses estimated at over $220 billion and reducing yields by up to 30%. Traditional disease detection methods rely on manual inspection and expert knowledge, which can be time-consuming, costly, and inaccessible to many farmers, especially in rural areas.
-### Solution:- This project presents an AI-powered Leaf Disease Detection System that uses Convolutional Neural Networks (CNN) and deep learning techniques to identify plant diseases from leaf images. The system provides accurate disease predictions along with remedies, prevention measures, and treatment recommendations, enabling early intervention and improved crop management.
 
-## Features:-
+## Introduction
+### Problem
+Agriculture plays a vital role in global food production and supports over 2.6 billion people worldwide. However, plant diseases significantly impact crop health and productivity, causing annual losses estimated at over $220 billion and reducing yields by up to 30%. Traditional disease detection methods rely on manual inspection and expert knowledge, which can be time-consuming, costly, and inaccessible to many farmers, especially in rural areas.
+
+### Solution
+This project presents an AI-powered Leaf Disease Detection System that uses Convolutional Neural Networks (CNN) and deep learning techniques to identify plant diseases from leaf images. The system provides accurate disease predictions along with remedies, prevention measures, and treatment recommendations, enabling early intervention and improved crop management.
+
+## Features
 - User Login and Registration
 - Upload/Scan Leaf Images for Analysis
 - AI-Based Disease Detection using CNN
-- Detection of Multiple Leaf Diseases
-- Disease Prediction Results
+- Detection of 10 Leaf Disease Classes
+- Disease Prediction Results with Confidence Score
 - Remedies and Treatment Suggestions
 - Prevention and Precaution Guidelines
 - Scan History Management
@@ -22,54 +26,63 @@ Provides login page, image upload, and scan interface. Handles user interaction 
 - HTML
 - CSS
 - JavaScript
+
 ### 2. Backend (Server & API)
 Built using Flask (Python) to manage requests and responses.
+
 **APIs Implemented:**
 - Login – User Authentication
 - Predict – Disease Prediction
 - History – Fetch Scan Records
+
 ### 3. Machine Learning Model
 CNN (Convolutional Neural Network) model built using PyTorch for disease classification.
 - Input: Leaf Image (224 × 224)
 - Output: Disease Type and Recommended Treatment
+
 ### 4. Image Processing
 Used for preprocessing and preparing images before prediction.
 - PIL (Pillow)
 - Torchvision
+
 **Functions:**
 - Image Resizing
 - Image Normalization
 - Tensor Conversion
+
 ### 5. Database
 SQLite Database (`leafcare.db`)
+
 **Stores:**
 - User Details
 - Scan History
 - Prediction Results
+
 ### 6. System Optimization
 - Fast Image Processing
 - Real-Time Disease Prediction
 - Efficient Resource Utilization
+
 ### 7. Data Management
 - Secure Storage of User Data
 - Quick Retrieval of Scan History
 - Efficient Database Operations
-## Technology Stack (Short Summary)
+
+## Technology Stack
+
 ### Frontend
-- HTML
-- CSS
-- JavaScript
+- HTML, CSS, JavaScript
+
 ### Backend
-- Python
-- Flask
+- Python, Flask
+
 ### Deep Learning
 - Convolutional Neural Network (CNN)
 - PyTorch
+
 ### Libraries
-- NumPy
-- OpenCV
-- Pillow
-- Torchvision
+- NumPy, OpenCV, Pillow, Torchvision
+
 ### Database
 - SQLite
 
@@ -81,9 +94,9 @@ SQLite Database (`leafcare.db`)
 5. Powdery Mildew
 6. Rust
 7. Bacterial Spot
-8. Leaf Curl
-9. Mosaic Virus
-10. Septoria Leaf Spot
+8. Mosaic Virus
+9. Septoria Leaf Spot
+10. Apple Scab
 
 ## Workflow
 1. User uploads a leaf image.
@@ -92,65 +105,56 @@ SQLite Database (`leafcare.db`)
 4. Model predicts the disease class.
 5. System displays:
    - Disease Name
+   - Confidence Score
    - Precautions
    - Remedies
    - Prevention Measures
-### Simple Workflow
 
-User Uploads/Scans Leaf Image
-↓
-Image Preprocessing
-↓
-CNN Analysis
-↓
-Disease Prediction
-↓
-Result with Remedies & Prevention Measures
+## Model Performance
+- CNN-Based Deep Learning Model built with PyTorch
+- Dataset: PlantVillage (8,000+ curated images across 10 disease classes)
+- Train/Val Split: 80/20
+- Data Augmentation: Random flips, rotation, color jitter, normalization
+- Validation Accuracy: **96.57%** (20 Epochs)
+- Fast and Efficient Real-Time Disease Prediction
+
+## Challenges & Learnings
+- Curated and mapped 10 disease classes from the PlantVillage dataset
+- Handled class imbalance through data augmentation
+- Implemented prototype-based unknown detection to reject non-leaf images
+- Integrated trained PyTorch model into a full-stack Flask web application
 
 ## Installation
 
 ### 1. Clone Repository
-
 ```bash
 git clone https://github.com/rohitpachghare2808/leaf-disease-detection.git
 ```
 
-### 2. Navigate to Project Folder
-
+### 2. Navigate to Backend Folder
 ```bash
-cd leaf-disease-detection
+cd leaf-disease-detection/backend
 ```
 
 ### 3. Create Virtual Environment
-
 ```bash
 python -m venv venv
 ```
 
 ### 4. Activate Virtual Environment
-
 ```bash
 venv\Scripts\activate
 ```
 
 ### 5. Install Dependencies
-
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 6. Run Application
-
 ```bash
 python app.py
 ```
-
-## Model Performance
-
-- CNN-Based Deep Learning Model
-- Trained on Multiple Disease Classes
-- Validation Accuracy: ~75% (20 Epochs)
-- Fast and Efficient Disease Prediction
 
 ## 📸 Screenshots
 
@@ -174,7 +178,6 @@ python app.py
 **Rohit Kailas Pachghare**
 B.E. Artificial Intelligence & Data Science
 
-📧 [Email](mailto:rohitpachghare2808@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/rohit-pachghare-85118832b/)  
+📧 [Email](mailto:rohitpachghare2808@gmail.com)
+🔗 [LinkedIn](https://www.linkedin.com/in/rohit-pachghare-85118832b/)
 💻 [GitHub](https://github.com/rohitpachghare2808)
-
