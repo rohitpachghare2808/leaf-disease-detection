@@ -9,8 +9,7 @@ from torchvision import datasets, transforms
 from model import LeafCNN
 
 
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-
+BASE_DIR = r"C:\Users\Admin\Desktop\leaf-cnn-rebuild"
 
 def get_dataloaders(data_root, batch_size=32):
     train_transform = transforms.Compose(
@@ -142,8 +141,5 @@ def train_model(data_root, epochs=20, lr=0.001, batch_size=32, device=None):
 
 
 if __name__ == "__main__":
-    # Put your dataset under: project_root/data/train and project_root/data/val
-    # with subfolders: Healthy, Early Blight, Late Blight, Leaf Spot, Powdery Mildew, Rust, Bacterial Spot, Leaf Curl, Mosaic Virus, Septoria Leaf Spot
-    data_root = os.path.join(BASE_DIR, "data")
+    data_root = r"C:\Users\Admin\Desktop\leaf-cnn-rebuild\data"
     train_model(data_root)
-
