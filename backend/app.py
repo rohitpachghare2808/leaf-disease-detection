@@ -269,7 +269,7 @@ def predict():
         probabilities = torch.nn.functional.softmax(outputs, dim=1)[0]
         predicted_index = int(torch.argmax(probabilities).item())
         confidence_val = float(probabilities[predicted_index].item())
-
+    
     predicted_class = classes[predicted_index]
     distance_reject = False
     if predicted_class in feature_prototypes and predicted_class in feature_distance_thresholds:
@@ -278,9 +278,15 @@ def predict():
         allowed_distance = float(feature_distance_thresholds[predicted_class])
         distance_reject = feature_distance > allowed_distance
 
+    print(f"\n--- DEBUG ---")
+    print(f"Predicted class: {predicted_class}")
+    print(f"Confidence: {confidence_val}")
+    print(f"Distance reject: {distance_reject}")
+    print(f"-------------\n")
+
     # Lower threshold to reduce false "Unknown" on small datasets.
     # Still treat direct "Unknown" class predictions as unknown.
-    if confidence_val < 0.60 or predicted_class == "Unknown" or distance_reject:
+    if confidence_val < 0.50 or predicted_class == "Unknown":
         prediction = "Unknown"
     else:
         prediction = predicted_class
