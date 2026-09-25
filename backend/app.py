@@ -30,7 +30,7 @@ init_db(DB)
 # Create a default demo user if not present
 DEMO_EMAIL = "leafcare@example.com"
 DEMO_PASSWORD = "leaf123"
-ensure_default_user(DB, DEMO_EMAIL, generate_password_hash(DEMO_PASSWORD))
+ensure_default_user(DB, DEMO_EMAIL, generate_password_hash(DEMO_PASSWORD, method="pbkdf2:sha256"))
 
 # IMPORTANT: class order MUST match the folder names order used by ImageFolder.
 # Fallback list is used if trained checkpoint doesn't contain class names.
