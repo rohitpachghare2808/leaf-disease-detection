@@ -14,7 +14,7 @@ function login() {
     return;
   }
 
-  fetch("http://127.0.0.1:5000/login", {
+  fetch("/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     credentials: "include",
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Check if we are already logged in
-  fetch("http://127.0.0.1:5000/me", { credentials: "include" })
+  fetch("/me", { credentials: "include" })
     .then(res => res.json())
     .then(data => {
       if (data.ok) {
@@ -82,7 +82,7 @@ function backToDashboard() {
 
 // Logout back to login screen
 function logout() {
-  fetch("http://127.0.0.1:5000/logout", { method: "POST", credentials: "include" }).finally(() => {
+  fetch("/logout", { method: "POST", credentials: "include" }).finally(() => {
     document.getElementById("home-page").classList.remove("active-page");
     document.getElementById("auth-page").classList.add("active-page");
   });
@@ -179,7 +179,7 @@ function sendImageForPrediction(fileOrBlob, fileName, previewUrl) {
   const formData = new FormData()
   formData.append("image", fileOrBlob, fileName || "image.jpg")
 
-  fetch("http://127.0.0.1:5000/predict", {
+  fetch("/predict", {
     method: "POST",
     credentials: "include",
     body: formData
@@ -201,9 +201,7 @@ function sendImageForPrediction(fileOrBlob, fileName, previewUrl) {
         const treatment = data.treatment || ""
         const date = new Date().toLocaleTimeString()
         let imageUrl = data.imageUrl || previewUrl
-        if (imageUrl && imageUrl.startsWith("/")) {
-          imageUrl = "http://127.0.0.1:5000" + imageUrl;
-        }
+        
 
         addHistory(result, percentage, fileName || "image.jpg", date, description, treatment, imageUrl)
 
@@ -280,7 +278,7 @@ Loading history...
 </p>
 `
 
-  fetch("http://127.0.0.1:5000/history", { credentials: "include" })
+  fetch("/history", { credentials: "include" })
     .then(async (res) => {
       const data = await res.json().catch(() => ({}))
       if (!res.ok) throw new Error(data.error || "Failed to load history")
@@ -308,9 +306,7 @@ Loading history...
         const confidences = item.confidences || {}
         const percentage = confidences[item.result] ? (confidences[item.result] * 100).toFixed(1) + "%" : "N/A"
         let fullImageUrl = item.imageUrl;
-        if (fullImageUrl && fullImageUrl.startsWith("/")) {
-          fullImageUrl = "http://127.0.0.1:5000" + fullImageUrl;
-        }
+        
 
         div.innerHTML = `
 
