@@ -1,14 +1,14 @@
 from flask import Flask, request, jsonify, send_from_directory, session
 from PIL import Image
-   import torch
-   torch.set_num_threads(1)
-torch.no_grad_mode = True  # not a real setting, ignore -- remove this line
-   import torch.nn.functional as F
+import torch
+torch.set_num_threads(1)
+import torch.nn.functional as F
 import torchvision.transforms as transforms
 from model import LeafCNN
 import os
 import json
 import uuid
+import gc
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from db import connect, get_db_path, init_db, ensure_default_user, utc_now_iso
@@ -271,7 +271,7 @@ def predict():
         probabilities = torch.nn.functional.softmax(outputs, dim=1)[0]
         predicted_index = int(torch.argmax(probabilities).item())
         confidence_val = float(probabilities[predicted_index].item())
-    
+
     predicted_class = classes[predicted_index]
     distance_reject = False
     if predicted_class in feature_prototypes and predicted_class in feature_distance_thresholds:
@@ -328,22 +328,25 @@ def predict():
     DB.commit()
     scan_id = cur.lastrowid
 
-    return jsonify(
-        {
-            "ok": True,
-            "id": scan_id,
-            "result": result,
-            "prediction": prediction,
-            "confidence": round(confidence_val * 100, 2),
-            "confidences": confidences,
-            "description": prevention,
-            "treatment": remedy,
-            "prevention": prevention,
-            "remedy": remedy,
-            "imageUrl": f"/uploads/{saved_name}",
-            "uploadedAs": saved_name,
-        }
-    )
+    response_data = {
+        "ok": True,
+        "id": scan_id,
+        "result": result,
+        "prediction": prediction,
+        "confidence": round(confidence_val * 100, 2),
+        "confidences": confidences,
+        "description": prevention,
+        "treatment": remedy,
+        "prevention": prevention,
+        "remedy": remedy,
+        "imageUrl": f"/uploads/{saved_name}",
+        "uploadedAs": saved_name,
+    }
+
+    del img, features, outputs, probabilities
+    gc.collect()
+
+    return jsonify(response_data)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
