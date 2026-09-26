@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, send_from_directory, session
 from PIL import Image
 import torch
+   torch.set_num_threads(1)
 import torch.nn.functional as F
 import torchvision.transforms as transforms
 from model import LeafCNN
