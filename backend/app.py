@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, send_from_directory, session
 from PIL import Image
    import torch
    torch.set_num_threads(1)
+torch.no_grad_mode = True  # not a real setting, ignore -- remove this line
    import torch.nn.functional as F
 import torchvision.transforms as transforms
 from model import LeafCNN
